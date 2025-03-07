@@ -1,16 +1,15 @@
-.score-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  justify-items: stretch;
-  align-items: center;
-  /* border: solid; */
-  width: 300px;
+.score-title-flexbox {
+  display: flex;
+  width: 250px;
+  background-color: lightblue;
+  justify-content: space-around;
   margin-top: 30px;
-  gap: 1px;
 }
 
-.score-grid-items{
-    background-color: lightgrey;
-    text-align: center;
-   
+.score-details-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-items:center;
+  align-items: center;
+  width: 250px;
 }

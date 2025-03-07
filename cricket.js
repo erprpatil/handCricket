@@ -67,17 +67,27 @@ run6Button.addEventListener("click", () => {
 // scoreboard function
 
 function updateScoardBoard(runs) {
-  //   let scoreGrid = document.querySelector('.js-score-grid');
+  let scoreGrid = document.querySelector(".js-score-details-grid");
 
   //   scoreboard.forEach((run) => {
   //     scoreGrid.innerHTML = `
   //     <div> ${scorboard.indexOf(run) + 1 } </div>
   //     <div> ${runs} </div> `
   // })
+
+  let testHtml = "";
   let ball = scoreboard.indexOf(runs);
   scoreboard.forEach((run) => {
-    ball++;
+    ball++
+    let newScore = `
+    <div> ${ball}</div>
+    <div> ${run}</div>
+    `;
+    testHtml += newScore;
   });
+
+  scoreGrid.innerHTML = testHtml;
+
   console.log(`Ball: ${ball}`);
   console.log(`Runs: ${runs}`);
 }
@@ -113,6 +123,8 @@ function throwBall(runs, computerMove) {
   } else {
     scoreboard.push(runs);
   }
+  // return scoreboard;
+  // return runs;
 }
 
 /*
