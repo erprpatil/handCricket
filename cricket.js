@@ -11,6 +11,7 @@ run1Button.addEventListener("click", () => {
   console.log(`${runs} Run`);
   playComputerMove();
   throwBall(runs, computerMove);
+  updateScoardBoard(runs);
 
   console.log(scoreboard);
 });
@@ -63,10 +64,23 @@ run6Button.addEventListener("click", () => {
   console.log(scoreboard);
 });
 
-// Add html element with each ball
+// scoreboard function
 
+function updateScoardBoard(runs) {
+  //   let scoreGrid = document.querySelector('.js-score-grid');
 
-
+  //   scoreboard.forEach((run) => {
+  //     scoreGrid.innerHTML = `
+  //     <div> ${scorboard.indexOf(run) + 1 } </div>
+  //     <div> ${runs} </div> `
+  // })
+  let ball = scoreboard.indexOf(runs);
+  scoreboard.forEach((run) => {
+    ball++;
+  });
+  console.log(`Ball: ${ball}`);
+  console.log(`Runs: ${runs}`);
+}
 
 // -------FUNCTIONS------
 
