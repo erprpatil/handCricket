@@ -11,7 +11,7 @@ run1Button.addEventListener("click", () => {
   console.log(`${runs} Run`);
   playComputerMove();
   throwBall(runs, computerMove);
-  updateScoardBoard(runs);
+  updateScoardBoard(runs, computerMove  );
 
   console.log(scoreboard);
 });
@@ -24,6 +24,7 @@ run2Button.addEventListener("click", () => {
   console.log(`${runs} Runs`);
   playComputerMove();
   throwBall(runs, computerMove);
+  updateScoardBoard(runs);
 
   console.log(scoreboard);
 });
@@ -36,6 +37,7 @@ run3Button.addEventListener("click", () => {
   console.log(`${runs} Runs`);
   playComputerMove();
   throwBall(runs, computerMove);
+  updateScoardBoard(runs);
 
   console.log(scoreboard);
 });
@@ -48,6 +50,7 @@ run4Button.addEventListener("click", () => {
   console.log(`${runs} Runs`);
   playComputerMove();
   throwBall(runs, computerMove);
+  updateScoardBoard(runs);
 
   console.log(scoreboard);
 });
@@ -60,13 +63,14 @@ run6Button.addEventListener("click", () => {
   console.log(`${runs} Runs`);
   playComputerMove();
   throwBall(runs, computerMove);
+  updateScoardBoard(runs);
 
   console.log(scoreboard);
 });
 
 // scoreboard function
 
-function updateScoardBoard(runs) {
+function updateScoardBoard(runs, computerMove) {
   let scoreGrid = document.querySelector(".js-score-details-grid");
 
   //   scoreboard.forEach((run) => {
@@ -76,12 +80,13 @@ function updateScoardBoard(runs) {
   // })
 
   let testHtml = "";
-  let ball = scoreboard.indexOf(runs);
+  let ball = 0;
+
   scoreboard.forEach((run) => {
-    ball++
+    ball++; 
     let newScore = `
-    <div> ${ball}</div>
-    <div> ${run}</div>
+    <div>${ball}</div>
+    <div>${run}</div>
     `;
     testHtml += newScore;
   });
@@ -127,7 +132,7 @@ function throwBall(runs, computerMove) {
   // return runs;
 }
 
-/*
+/*  
 Next steps-
 JSON save score
 
