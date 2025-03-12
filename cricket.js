@@ -11,7 +11,7 @@ run1Button.addEventListener("click", () => {
   console.log(`${runs} Run`);
   playComputerMove();
   throwBall(runs, computerMove);
-  updateScoardBoard(runs, computerMove  );
+  updateScoardBoard(runs, computerMove);
 
   console.log(scoreboard);
 });
@@ -81,13 +81,21 @@ function updateScoardBoard(runs, computerMove) {
 
   let testHtml = "";
   let ball = 0;
+  let newScore;
 
   scoreboard.forEach((run) => {
-    ball++; 
-    let newScore = `
+    //[1, 2, 3, 4]
+    if (computerMove === 0) {
+      ball = "NB";
+    } else {
+      ball++;
+    }
+
+    newScore = `
     <div>${ball}</div>
     <div>${run}</div>
     `;
+
     testHtml += newScore;
   });
 
