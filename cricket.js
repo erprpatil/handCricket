@@ -1,6 +1,7 @@
 let runs;
 let computerMove;
 let scoreboard = [];
+let ball = 1;
 
 // For button 1
 
@@ -24,7 +25,8 @@ run2Button.addEventListener("click", () => {
   console.log(`${runs} Runs`);
   playComputerMove();
   throwBall(runs, computerMove);
-  updateScoardBoard(runs);
+  updateBallCounter(ball);
+  updateScoardBoard(ball, runs);
 
   console.log(scoreboard);
 });
@@ -37,6 +39,7 @@ run3Button.addEventListener("click", () => {
   console.log(`${runs} Runs`);
   playComputerMove();
   throwBall(runs, computerMove);
+  
   updateScoardBoard(runs);
 
   console.log(scoreboard);
@@ -50,6 +53,7 @@ run4Button.addEventListener("click", () => {
   console.log(`${runs} Runs`);
   playComputerMove();
   throwBall(runs, computerMove);
+  updateBallCounter(ball);
   updateScoardBoard(runs);
 
   console.log(scoreboard);
@@ -63,14 +67,14 @@ run6Button.addEventListener("click", () => {
   console.log(`${runs} Runs`);
   playComputerMove();
   throwBall(runs, computerMove);
-  updateScoardBoard(runs);
+  updateScoardBoard(runs, computerMove);
 
   console.log(scoreboard);
 });
 
 // scoreboard function
 
-function updateScoardBoard(runs, computerMove) {
+function updateScoardBoard(runs, ball) {
   let scoreGrid = document.querySelector(".js-score-details-grid");
 
   //   scoreboard.forEach((run) => {
@@ -80,26 +84,13 @@ function updateScoardBoard(runs, computerMove) {
   // })
 
   let testHtml = "";
-  let ball = 0;
-  let newScore;
+    testHtml = `
+      <div>${ball}</div>
+      <div>${runs}</div>`;
 
-  scoreboard.forEach((run) => {
-    //[1, 2, 3, 4]
-    if (computerMove === 0) {
-      ball = "NB";
-    } else {
-      ball++;
-    }
+    // testHtml += newScore;
 
-    newScore = `
-    <div>${ball}</div>
-    <div>${run}</div>
-    `;
-
-    testHtml += newScore;
-  });
-
-  scoreGrid.innerHTML = testHtml;
+  scoreGrid.innerHTML += testHtml;
 
   console.log(`Ball: ${ball}`);
   console.log(`Runs: ${runs}`);
@@ -140,6 +131,15 @@ function throwBall(runs, computerMove) {
   // return runs;
 }
 
+function updateBallCounter(ball){
+  if (computerMove === 0){
+    ball = 'NB';
+  } else{
+    ball++;
+  }
+  return ball;
+
+}
 /*  
 Next steps-
 JSON save score
